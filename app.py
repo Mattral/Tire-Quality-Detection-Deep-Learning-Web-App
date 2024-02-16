@@ -12,21 +12,22 @@ warnings.filterwarnings("ignore")
 st.set_page_config(
     page_title="Tire Quality Detection",
     page_icon = ":car:",
-    initial_sidebar_state = 'auto'
-)
+    initial_sidebar_state = 'auto' )
+
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             </style>
             """
+
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 with st.sidebar:
         st.image('mg.png')
         st.title("Tire Quality Detection")
-        st.write("This software accurately detects the quality of tires of any vehicle.")
+        st.write("This WebApp accurately detects the quality of tires of any vehicle.")
 
         st.sidebar.info("The detection is performed with the help of ResNet-50 and MobileNet V3 and is faster and lighter than its competitors")
 
@@ -40,8 +41,6 @@ def prediction_cls(prediction):
         
        
 
-    
-
 
 @st.cache(allow_output_mutation=True)
 def load_model():
@@ -52,7 +51,6 @@ with st.spinner('Model is being loaded..'):
     #model = keras.Sequential()
     #model.add(keras.layers.Input(shape=(224, 224, 4)))
     
-
 st.write("""
          # Tire Quality Detection
          """
@@ -101,3 +99,4 @@ else:
 
 with st.expander("Check sample data source"):
             st.markdown(f'<a href="https://www.kaggle.com/datasets/warcoder/tyre-quality-classification/data" target="_blank" style="display: inline-block; padding: 12px 20px; background-color: black; color: white; text-align: center; text-decoration: none; font-size: 16px; border-radius: 4px;">Sample Dataset</a>', unsafe_allow_html=True)  
+
