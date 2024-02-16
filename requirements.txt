@@ -1,0 +1,5 @@
+streamlit
+tensorflow-cpu
+Pillow
+numpy
+protobuf
